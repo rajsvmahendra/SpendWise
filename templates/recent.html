@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}SpendWise | Transactions{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <h2>Transactions</h2>
+    <p>Browse, search, and filter your recorded expenses.</p>
+</section>
+
+<!-- Filters toolbar -->
+<section class="filters-bar">
+    <div class="search-wrapper">
+        <input type="text" id="searchInput"
+               placeholder="Search by business, category, or notes..."
+               autocomplete="off">
+    </div>
+    <div class="filter-chips" id="filterChips">
+        <button class="filter-chip active" data-category="all">All</button>
+        <!-- Category chips populated by JS -->
+    </div>
+</section>
+
+<!-- Results count -->
+<p class="results-count" id="resultsCount"></p>
+
+<!-- Table -->
+<section>
+    <div class="table-wrapper">
+        <table id="purchasesTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Business</th>
+                    <th>Category</th>
+                    <th>Notes</th>
+                    <th class="th-right">Amount</th>
+                    <th>Receipt</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock %}

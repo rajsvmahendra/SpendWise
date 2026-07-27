@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}SpendWise | Dashboard{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h2>Welcome to SpendWise</h2>
+    <p>Track your expenses, analyze your spending, and make smarter financial decisions.</p>
+</section>
+
+<!-- Quick Stats -->
+<section>
+    <div class="stats-grid" id="statsGrid">
+        <div class="stat-card">
+            <span class="stat-label">Total Spent</span>
+            <span class="stat-value" id="statTotal">—</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">This Month</span>
+            <span class="stat-value" id="statMonth">—</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Transactions</span>
+            <span class="stat-value" id="statCount">—</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Top Category</span>
+            <span class="stat-value" id="statTop">—</span>
+        </div>
+    </div>
+</section>
+
+<!-- Charts -->
+<section>
+    <div id="dataContainer">
+        <div id="lineGraphContainer">
+            <div class="chart-header">
+                <div>
+                    <span class="chart-title">Monthly Spending</span>
+                    <span class="chart-subtitle" id="chartSubtitle">Loading...</span>
+                </div>
+            </div>
+            <canvas id="monthlySpendingChart"></canvas>
+        </div>
+
+        <div id="pieChartContainer">
+            <canvas id="allTimeCategoriesChart"></canvas>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

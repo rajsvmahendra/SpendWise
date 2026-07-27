@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}SpendWise | Analytics{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <h2>Analytics</h2>
+    <p>Understand your spending patterns and monthly breakdown.</p>
+</section>
+
+<!-- Summary strip -->
+<section>
+    <div class="stats-grid" id="analyticsSummary">
+        <div class="stat-card">
+            <span class="stat-label">Highest Month</span>
+            <span class="stat-value" id="statHighestMonth">—</span>
+            <span class="stat-sub" id="statHighestMonthAmount"></span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Top Category</span>
+            <span class="stat-value" id="statTopCategory">—</span>
+            <span class="stat-sub" id="statTopCategoryAmount"></span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-label">Average / Month</span>
+            <span class="stat-value" id="statAverage">—</span>
+            <span class="stat-sub">across all months</span>
+        </div>
+    </div>
+</section>
+
+<!-- Category breakdown bar chart -->
+<section>
+    <div class="analytics-card">
+        <div class="chart-header">
+            <div>
+                <span class="chart-title">Category Breakdown</span>
+                <span class="chart-subtitle">All-time spending by category</span>
+            </div>
+        </div>
+        <div id="categoryBreakdown" class="category-breakdown"></div>
+    </div>
+</section>
+
+<!-- Monthly cards -->
+<section>
+    <h3 class="section-title">Monthly Breakdown</h3>
+    <div id="monthlyOverview"></div>
+</section>
+
+{% endblock %}

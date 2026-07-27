@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}SpendWise | Add Expense{% endblock %}
+
+{% block content %}
+
+<section class="page-header">
+    <h2>Add New Expense</h2>
+    <p>Log a purchase to keep your records up to date.</p>
+</section>
+
+<form id="purchaseForm" enctype="multipart/form-data" autocomplete="off" class="expense-form">
+
+    <!-- Row 1: Date + Amount -->
+    <div class="form-row">
+        <div class="form-field">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div class="form-field">
+            <label for="amount">Amount</label>
+            <div class="input-with-prefix">
+                <span class="prefix">₹</span>
+                <input type="number" id="amount" name="amount"
+                       step="0.01" placeholder="0.00" required>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business -->
+    <div class="form-field">
+        <label for="business">Where did you spend?</label>
+        <input type="text" id="business" name="business"
+               placeholder="e.g. Reliance Fresh, Zomato, Uber" required>
+    </div>
+
+    <!-- Category as pills -->
+    <div class="form-field">
+        <label>Category</label>
+
+        <div class="category-grid" id="categoryGrid">
+            <button type="button" class="category-pill" data-category="Groceries">Groceries</button>
+            <button type="button" class="category-pill" data-category="Restaurants">Restaurants</button>
+            <button type="button" class="category-pill" data-category="Gas/Car">Gas / Car</button>
+            <button type="button" class="category-pill" data-category="Clothes">Clothes</button>
+            <button type="button" class="category-pill" data-category="Furniture/Home">Food</button>
+            <button type="button" class="category-pill" data-category="School/Office Supplies">School / Office</button>
+            <button type="button" class="category-pill" data-category="Misc">Misc</button>
+            <button type="button" class="category-pill" data-category="__other__">Other</button>
+        </div>
+
+        <input type="hidden" id="category" name="category" required>
+
+        <input type="text" id="customCategory" name="customCategory"
+               placeholder="Enter custom category name">
+    </div>
+
+    <!-- Description -->
+    <div class="form-field">
+        <label for="description">
+            Notes <span class="optional-tag">Optional</span>
+        </label>
+        <textarea id="description" name="description"
+                  placeholder="Any details you want to remember..."></textarea>
+    </div>
+
+    <!-- Receipt upload -->
+    <div class="form-field">
+        <label>
+            Receipt <span class="optional-tag">Optional</span>
+        </label>
+
+        <label for="photo" class="file-drop">
+            <div class="file-drop-content">
+                <span class="file-drop-text" id="fileDropText">
+                    Click to upload a receipt photo
+                </span>
+                <span class="file-drop-hint">PNG or JPG, up to 10 MB</span>
+            </div>
+        </label>
+        <input type="file" id="photo" name="photo" accept="image/*" hidden>
+    </div>
+
+    <button type="submit" class="btn-primary">Add Expense</button>
+</form>
+
+<!-- Toast notification -->
+<div id="toast" class="toast"></div>
+
+{% endblock %}
