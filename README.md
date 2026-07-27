@@ -1,5 +1,4 @@
-﻿# SpendWise 💰
-
+﻿# SpendWise 
 **Track Smarter. Spend Better.**
 
 SpendWise is a personal expense tracking web application built as a final year Computer Science Engineering project. It helps users record, categorize, analyze, and visualize their daily expenses through an intuitive, modern interface.
